@@ -9,6 +9,7 @@ namespace r2warsTorneo
         {
             string recv = e.Data;
             string msg = "";
+            bool stopped = false;
             if (recv == "prevlog")
             {
                 r2warsStatic.r2w.prevLog();
@@ -29,6 +30,13 @@ namespace r2warsTorneo
             else if (recv == "start_tournament")
             {
                 r2warsStatic.torneo.RunTournamentCombats(true);
+            }
+            else if(recv == "step_tournament"){
+                if (stopped == false) {
+                    stopped = true;
+                    r2warsStatic.torneo.StopActualCombat(); 
+                }
+                r2warsStatic.torneo.StepTournamentCombats();
             }
             else if (recv == "stop_tournament")
             {
