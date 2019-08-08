@@ -1,3 +1,6 @@
+# Modifications
+Added a 'Start Step' button that will start the tournament in a paused state, will also create a 'step' button to allow the user to step through each cycle. I've done this to make it slightly easier to debug.
+
 # r2wars
 
 C# implementation for r2wars tournament
